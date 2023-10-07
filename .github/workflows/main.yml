@@ -22,5 +22,7 @@ jobs:
       - name: Init & Build
         run: |
           cd C:\ ; git clone --depth=1 https://github.com/dotnet/runtime.git
-          cd runtime\src\coreclr\tools\dotnet-pgo ; dotnet restore ; dotnet build
+          #   cd runtime\src\coreclr\tools\dotnet-pgo
+          cd runtime
+          .\build.cmd -a x64 -c Release
           ls
