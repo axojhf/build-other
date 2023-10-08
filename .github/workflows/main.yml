@@ -21,8 +21,14 @@ jobs:
           toolset: 14.3
       - name: Init & Build
         run: |
-          cd C:\ ; git clone --depth=1 https://github.com/dotnet/runtime.git
-          #   cd runtime\src\coreclr\tools\dotnet-pgo
-          cd runtime
+          cd C:\ ; git clone --depth=1 https://github.com/dotnet/runtime.git dotnet
+          cd dotnet
           .\build.cmd -a x64 -c Release
           ls
+      - name: Package Directories
+        run: |
+          7z a dotnet-pgo.7z C:\dotnet\artifacts\packages\Release\NonShipping\dotnet-pgo.9.0.0-dev.nupkg
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dotnet-pgo
+          path: dotnet-pgo.7z
