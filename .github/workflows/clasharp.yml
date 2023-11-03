@@ -22,12 +22,12 @@ jobs:
       - name: Init & Build
         run: |
           cd C:\ ; git clone --depth=1 https://github.com/moonheart/Clasharp.git -b master
-          cd Clasharp
+          cd Clasharp\Clasharp
           dotnet publish
       - name: Package Directories
         run: |
-          7z a dotnet-pgo.7z C:\dotnet\artifacts\packages\Release\NonShipping\dotnet-pgo.9.0.0-dev.nupkg
+          7z a Clasharp.7z C:\Clasharp\Clasharp\bin\Release
       - uses: actions/upload-artifact@v3
         with:
           name: Clasharp
-          path: C:\Clasharp\bin\Release
+          path: Clasharp.7z
