@@ -61,4 +61,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Clasharp-NativeAot
-          path: C:\Clasharp\Clasharp\bin\Release\net8.0\publish\
+          path: C:\Clasharp\Clasharp\bin\Release\net8.0\win-x64\publish\
