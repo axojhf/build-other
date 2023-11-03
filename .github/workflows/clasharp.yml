@@ -60,5 +60,5 @@ jobs:
           # 7z a Clasharp.7z C:\Clasharp\Clasharp\bin\x64\Release\net7.0\publish\
       - uses: actions/upload-artifact@v3
         with:
-          name: Clasharp
+          name: Clasharp-NativeAot
           path: C:\Clasharp\Clasharp\bin\Release\net8.0\publish\
