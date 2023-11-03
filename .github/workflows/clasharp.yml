@@ -53,7 +53,7 @@ jobs:
           curl.exe -o mod.ps1 https://raw.githubusercontent.com/axojhf/build-other/clasharp/mod.ps1
           .\mod.ps1
           cd Clasharp\Clasharp
-          dotnet publish -c Release
+          dotnet publish -c Release -r win-x64
       # - name: Package Directories
       #   run: |
           # 7z a Clasharp.7z C:\Clasharp\release-dir
