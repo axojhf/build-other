@@ -10,25 +10,37 @@ jobs:
     name: Build
     runs-on: windows-latest
     steps:
-      - name: Install Dotnet
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: | 
-            8
+      # - name: Install Dotnet
+      #   uses: actions/setup-dotnet@v3
+      #   with:
+      #     dotnet-version: | 
+      #       8
       - uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: amd64
           toolset: 14.3
       - name: Init & Build
         run: |
-          cd C:\ ; git clone --depth=1 https://github.com/dotnet/runtime.git dotnet
-          cd dotnet
-          .\build.cmd -a x64 -c Release
+          cd C:\ ; git clone --depth=1 https://github.com/andywu188/de4dot de4dot
+          cd de4dot
+          .\build.ps1
           ls
-      - name: Package Directories
-        run: |
-          7z a dotnet-pgo.7z C:\dotnet\artifacts\packages\Release\NonShipping\dotnet-pgo.9.0.0-dev.nupkg
       - uses: actions/upload-artifact@v3
         with:
-          name: dotnet-pgo
-          path: dotnet-pgo.7z
+          name: de4dot-net35
+          path: C:/de4dot/Release/net35
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: de4dot-net45
+          path: C:/de4dot/Release/net45
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: de4dot-netcoreapp2.1
+          path: C:/de4dot/publish-netcoreapp2.1
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: de4dot-netcoreapp3.1
+          path: C:/de4dot/publish-netcoreapp3.1
