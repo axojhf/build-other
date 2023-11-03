@@ -61,4 +61,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Clasharp
-          path: C:\Clasharp\Clasharp\bin
+          path: C:\Clasharp\Clasharp\bin\Release\net8.0\publish\
