@@ -21,12 +21,14 @@ jobs:
           toolset: 14.3
       - name: Init & Build
         run: |
-          cd C:\ ; git clone --depth=1 https://github.com/moonheart/Clasharp.git -b master
-          cd Clasharp
-          .\publish.ps1 -configuration Release
+          cd C:\ ; git clone --depth=1 --recursive https://github.com/moonheart/Clasharp.git -b master
+          cd Clasharp\Clasharp
+          # .\publish.ps1 -configuration Release
+          dotnet publish
           ls ; ls Clasharp
       - name: Package Directories
         run: |
+          # 7z a Clasharp.7z C:\Clasharp\release-dir
           7z a Clasharp.7z C:\Clasharp\Clasharp\bin\Release
       - uses: actions/upload-artifact@v3
         with:
