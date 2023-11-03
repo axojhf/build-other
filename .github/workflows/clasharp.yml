@@ -23,7 +23,7 @@ jobs:
         run: |
           cd C:\ ; git clone --depth=1 https://github.com/moonheart/Clasharp.git -b master
           cd Clasharp
-          .\publish.ps1
+          .\publish.ps1 -configuration Release
           ls ; ls Clasharp
       - name: Package Directories
         run: |
