@@ -15,10 +15,10 @@ jobs:
       #   with:
       #     dotnet-version: | 
       #       7
-      # - uses: ilammy/msvc-dev-cmd@v1
-      #   with:
-      #     arch: amd64
-      #     toolset: 14.3
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: amd64
+          toolset: 14.3
       - name: Init & Build
         run: |
           cd C:\ ; git clone --depth=1 --recursive https://github.com/moonheart/Clasharp.git -b master
@@ -31,4 +31,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: Clasharp
-          path: C:\Clasharp\Clasharp\bin\x64\Release\net7.0\publish\*
+          path: C:\Clasharp\Clasharp\bin\x64\Release\net7.0\publish\
