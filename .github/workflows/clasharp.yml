@@ -1,4 +1,4 @@
-name: Build
+name: Clasharp Build
 
 on:
   push:
@@ -22,8 +22,9 @@ jobs:
       - name: Init & Build
         run: |
           cd C:\ ; git clone --depth=1 https://github.com/moonheart/Clasharp.git -b master
-          cd Clasharp\Clasharp
-          dotnet publish
+          cd Clasharp
+          .\publish.ps1
+          ls ; ls Clasharp
       - name: Package Directories
         run: |
           7z a Clasharp.7z C:\Clasharp\Clasharp\bin\Release
