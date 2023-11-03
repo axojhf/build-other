@@ -24,6 +24,7 @@ jobs:
           cd C:\ ; git clone --depth=1 --recursive https://github.com/moonheart/Clasharp.git -b master
           cd Clasharp\Clasharp
           dotnet publish -c Release -r win-x64
+          del C:\Clasharp\Clasharp\bin\x64\Release\net7.0\win-x64\publish\*.pdb
       # - name: Package Directories
       #   run: |
           # 7z a Clasharp.7z C:\Clasharp\release-dir
