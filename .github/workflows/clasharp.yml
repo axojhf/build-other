@@ -24,8 +24,8 @@ jobs:
           cd C:\ ; git clone --depth=1 --recursive https://github.com/moonheart/Clasharp.git -b master
           cd Clasharp\Clasharp
           # .\publish.ps1 -configuration Release
-          dotnet publish
-          ls ; ls Clasharp
+          dotnet publish -c Release
+          ls
       - name: Package Directories
         run: |
           # 7z a Clasharp.7z C:\Clasharp\release-dir
