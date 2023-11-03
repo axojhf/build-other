@@ -35,7 +35,7 @@ jobs:
 
 
   nativeaot:
-    name: Build
+    name: NativeAot Build
     runs-on: windows-latest
     steps:
       - name: Install Dotnet

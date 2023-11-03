@@ -14,3 +14,15 @@ $content = $content -replace "<TargetFramework>net7\.0</TargetFramework>", "<Tar
 
 # 写回文件
 Set-Content -Path $file -Value $content
+
+# 替换7.0.0为8.0
+# 文件路径
+$file = "C:\Clasharp\global.json"
+
+# 读取文件内容
+$content = Get-Content $file
+
+$content = $content -replace "7.0.0", "8.0"
+
+# 写回文件
+Set-Content -Path $file -Value $content
