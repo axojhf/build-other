@@ -29,7 +29,7 @@ jobs:
       - name: Package Directories
         run: |
           # 7z a Clasharp.7z C:\Clasharp\release-dir
-          7z a Clasharp.7z C:\Clasharp\Clasharp\bin\Release\
+          7z a Clasharp.7z C:\Clasharp\Clasharp\bin\x64\Release\net7.0\publish\
       - uses: actions/upload-artifact@v3
         with:
           name: Clasharp
