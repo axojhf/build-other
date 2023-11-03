@@ -24,7 +24,7 @@ jobs:
           cd C:\ ; git clone --depth=1 https://github.com/KOLANICH-tools/de4dot de4dot
           cd de4dot
           dotnet restore .\de4dot.netcore.sln
-          dotnet build --no-restore -c Release /p:Platform="x86" ./de4dot.netcore.sln
+          dotnet build --no-restore -c Release --arch x86 ./de4dot.netcore.sln
           #   .\build.ps1
           ls
       - uses: actions/upload-artifact@main
