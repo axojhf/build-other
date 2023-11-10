@@ -18,7 +18,7 @@ jobs:
       # - name: Package Directories
       #   run: |
       #     7z a dotnet-pgo.7z C:\dotnet\artifacts\packages\Release\NonShipping\dotnet-pgo.9.0.0-dev.nupkg
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: dotnet-pgo
-      #     path: dotnet-pgo.7z
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ratelmanager
+          path: /home/runner/work/build-other/build-other/ratel-core/ratelmanager/build/outputs/apk/release/
