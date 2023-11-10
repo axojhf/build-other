@@ -8,27 +8,17 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - name: Install Dotnet
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: | 
-            8
-      - uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: amd64
-          toolset: 14.3
       - name: Init & Build
         run: |
-          cd C:\ ; git clone --depth=1 https://github.com/dotnet/runtime.git dotnet
-          cd dotnet
-          .\build.cmd -a x64 -c Release
+          git clone --depth=1 https://github.com/virjarRatel/ratel-core
+          ./script/build_ratel_manager.sh
           ls
-      - name: Package Directories
-        run: |
-          7z a dotnet-pgo.7z C:\dotnet\artifacts\packages\Release\NonShipping\dotnet-pgo.9.0.0-dev.nupkg
-      - uses: actions/upload-artifact@v3
-        with:
-          name: dotnet-pgo
-          path: dotnet-pgo.7z
+      # - name: Package Directories
+      #   run: |
+      #     7z a dotnet-pgo.7z C:\dotnet\artifacts\packages\Release\NonShipping\dotnet-pgo.9.0.0-dev.nupkg
+      # - uses: actions/upload-artifact@v3
+      #   with:
+      #     name: dotnet-pgo
+      #     path: dotnet-pgo.7z
