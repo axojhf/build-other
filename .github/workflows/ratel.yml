@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Init & Build
         run: |
-          git clone --depth=1 https://github.com/virjarRatel/ratel-core
+          git clone --depth=1 https://github.com/virjarRatel/ratel-core && cd ratel-core
           ./script/build_ratel_manager.sh
           ls
       # - name: Package Directories
